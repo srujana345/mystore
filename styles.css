@@ -12,6 +12,7 @@
 }
 .productBlock{
     background-color: rgb(187, 248, 248);
+    height:400px;
 }
 .row{
     display: flex;
@@ -20,9 +21,10 @@
 }
 .box{
     background-color: white;
-    margin: 10px;
-    padding: 10px;
+    margin: 20px;
+    padding: 20px;
     border-radius: 20px;
+    height: 250px;
 }
 .cartBlock{
     background-color: rgb(243, 185, 185);
