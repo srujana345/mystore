@@ -1,13 +1,28 @@
+*{
+    margin: 0;
+}
 .container{
     margin: 0;
 }
 .header{
     display: flex;
+    padding: 20px;
     background-color: aquamarine;
     justify-content: space-between;
 }
 .productBlock{
     background-color: rgb(187, 248, 248);
+}
+.row{
+    display: flex;
+    justify-content: center;
+  
+}
+.box{
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20px;
 }
 .cartBlock{
     background-color: rgb(243, 185, 185);

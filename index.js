@@ -53,11 +53,16 @@ const hideCart = () => {
   divCartBlock.style.left = "100%";
 };
 const showProducts = () => {
-  let str = "";
+  let str = "<div class='row'>";
   products.map((value) => {
     str += `
-      <li>${value.id}-${value.name}-${value.price}-<button onclick=addToCart(${value.id})>Add to Cart</button></li>
+      <div class="box">
+      <h3>${value.name}</h3>
+      <p>${value.desc}</p>
+      <h4>${value.price}</h4>
+      <button onclick=addToCart(${value.id})>Add to Cart</button>
+      </div>
       `;
   });
-  divProducts.innerHTML = str;
+  divProducts.innerHTML = str+"<div>";
 };
