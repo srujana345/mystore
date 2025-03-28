@@ -120,8 +120,8 @@ function showLogin() {
   <div class='login'>
       <h2>Login Form</h2>
       <div id='msg'></div>
-      <p><input id="email" type="text"></p>
-      <p><input id="password" type="password"></p>
+      <p><input id="email" placeholder='Email Address' type="text"></p>
+      <p><input id="password" placeholder='Password' type="password"></p>
       <button onclick='chkUser()'>Log In</button>
       <p><button onclick='showForm()'>Create Account</button></p>
   </div>
@@ -183,13 +183,18 @@ const showProducts = () => {
       let str = "<div class='row'>";
       products.map((value) => {
         str += `
-          <div class='box'>
-          <h3>${value.name}</h3>
-          <p>${value.desc}</p>
-          <h4>$${value.price}</h4>
-          <button onclick=addToCart(${value.id})>Add to Cart</button>
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img src="${value.image}" class="card-img-top" alt="${value.name}">
+              <div class="card-body">
+                <h5 class="card-title">${value.name}</h5>
+                <p class="card-text">${value.desc}</p>
+                <h6 class="card-subtitle mb-2 text-muted">$${value.price}</h6>
+                <button class="btn btn-primary" onclick="addToCart(${value.id})">Add to Cart</button>
+              </div>
+            </div>
           </div>
-          `;
+        `;
       });
       divProducts.innerHTML = str + "</div>";
     });
