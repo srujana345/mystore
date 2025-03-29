@@ -1,68 +1,143 @@
-*{
-    margin: 0;  
-  }
-  .container {
-      margin: 0;
-  }
-  .header {
-      padding: 10px;
-      background-color:rgb(240, 148, 205);
-      display: flex;
-      justify-content: space-between;
-  }
-  .productBlock{
-      background-color: rgb(121, 203, 250);
-  }
-  .row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-  
-  }
-  .box {
-      background-color: white;
-      margin: 10px;
-      border-radius: 20px;
-      padding: 10px;
-  }
-  .cartBlock {
-      background-color: rgb(164, 237, 247);
-      width: 300px;
-      position: fixed;
-      top:0px;
-      left:100%;
-      height: 100%;
-      padding: 20px;
-      transition: 2s;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Default body background */
+body {
+    background-color: #f5f5f5; /* Default background for other pages */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 100vh;
+}
+
+/* White background for My Store page */
+body.mystore-page {
+    background-color: white; /* White background for My Store page */
+}
+.cart-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    margin-top: 10px;
   }
   
-  .login {
-      border: 1px solid black;
-      text-align: center;
-      padding: 100px;
-      margin: 10px;
+  .cart-button button {
+    padding: 14px 18px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3265f3;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .cart-button button:hover {
+    background-color: #5a78d1;
+  }
+  
+
+/* Header Styling */
+.header {
+    width: 100%;
+    background-color: #ff4081;
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Menu Styling */
+.menu li {
+    display: inline-block;
+    padding: 10px 20px;
+    background: white;
+    color: #ff4081;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.menu li:hover {
+    background-color: beige;
+    color:#ff4081 ;
+}
+
+/* Product Block */
+.productBlock {
+   margin-top: 80px;
+    padding: 20px;
+    width: 100%; /* Full width */
+}
+
+/* Styling for product images */
+.productBlock img {
+    width: 100%; /* Set the desired width */
+    height: 350px; /* Set the desired height */
+    object-fit: cover; /* Ensures the image fits within the dimensions without distortion */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better appearance */
+    margin-bottom: 10px; /* Add spacing below the image */
+}
+
+/* Product Box */
+.box {
+    background-color: white;
+    width: 300px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.box:hover {
+    transform: translateY(-5px);
+}
+
+/* Cart Block */
+.cartBlock {
+    background-color:#edb3fc;
+    width: 350px;
+    margin-top: 80px;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100%;
+    padding: 20px;
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
+    transition: 0.5s;
+}
+
+.cartBlock.open {
+    right: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
     
-  }
-  
-  .login input,button{
-      margin: 10px;
-      padding: 10px;
-  }
-  
-  .registration {
-      border: 1px solid black;
-      text-align: center;
-      padding: 100px;
-      margin: 10px;
-  
-  }
-  
-  .registration input,button{
-      margin: 10px;
-      padding: 10px;
-  }
-  
-  .menu li {
-      display: inline-block;
-      padding: 5px;
-  }
+    .menu {
+        margin-top: 10px;
+    }
+
+    .cartBlock {
+        width: 100%;
+    }
+}
